@@ -1,7 +1,15 @@
+import { useEffect } from "react"
 import { CardDemo } from "./CardDemo"
+import axios from "axios"
 
 
 function App() {
+  useEffect(()=> {
+    axios.get("http://localhost:5000/api/user")
+    .then(res => console.log(res))
+    .catch(err=> console.log(err))
+
+  }, [])
 
   return (
     <>
